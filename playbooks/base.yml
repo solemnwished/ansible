@@ -1,0 +1,25 @@
+- name: "APT: Install aptitude package"
+  hosts: all
+  become: True
+  become_user: root
+
+  tasks:
+    - name: DOCKER
+      apt:
+        force_apt_get: yes
+        update_cache: yes
+        name: docker.io
+        state: latest
+
+    - name: HOSTNAME
+      hostname:
+        name: "{{ server_name }}"
+
+    - name: INSTALL PIP
+      apt:
+        name: python3-pip
+        state: present
+
+    - name: INSTALL NET-TOOLS
+      pip:
+        name: net-tools

@@ -1,0 +1,8 @@
+#Host website
+[website]
+web
+web1
+
+#Host db
+[db]
+db01

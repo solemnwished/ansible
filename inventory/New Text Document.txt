@@ -1,0 +1,8 @@
+Host *
+  User ndn
+  IdentityFile C:\Users\InMyArms\.ssh>id_rsa_ndn.pem
+
+Host techmaster
+  HostName 192.168.217.128
+Host techmaster1
+  HostName 192.168.217.130

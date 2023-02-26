@@ -1,0 +1,19 @@
+- name: "APT: Install aptitude package"
+  hosts: website
+  become: True
+  become_user: root
+
+  tasks:
+    - name: DOCKER
+      apt:
+        force_apt_get: yes
+        update_cache: yes
+        name: docker.io
+        state: present
+    - name: Set hostname
+      hostname:
+        name: "{{server_name}}"
+    - name: APACHE HTTPD
+        dnf:
+         name: "httpd"
+         state: present
